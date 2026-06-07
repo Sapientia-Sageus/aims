@@ -11,6 +11,8 @@ const navLinks = [
   { href: "/astrology", label: "Celestial Map" },
   { href: "/planetary-hours", label: "Hours" },
   { href: "/rituals", label: "Rituals" },
+  { href: "/godform", label: "Godform" },
+  { href: "/liber-israfel", label: "Israfel" },
   { href: "/events", label: "Events" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },

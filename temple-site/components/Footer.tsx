@@ -142,6 +142,8 @@ export default function Footer() {
                 { href: "/astrology", label: "The Celestial Map" },
                 { href: "/planetary-hours", label: "Planetary Hours" },
                 { href: "/rituals", label: "Ritual Tracing" },
+                { href: "/liber-israfel", label: "Liber Israfel" },
+                { href: "/godform", label: "The Godform" },
                 { href: "/events", label: "Events & Rituals" },
                 { href: "/blog", label: "Sacred Writings" },
                 { href: "/contact", label: "Join Us" },
