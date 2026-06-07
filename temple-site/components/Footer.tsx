@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Footer() {
@@ -137,6 +139,9 @@ export default function Footer() {
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About the Temple" },
                 { href: "/courses", label: "Our Courses" },
+                { href: "/astrology", label: "The Celestial Map" },
+                { href: "/planetary-hours", label: "Planetary Hours" },
+                { href: "/rituals", label: "Ritual Tracing" },
                 { href: "/events", label: "Events & Rituals" },
                 { href: "/blog", label: "Sacred Writings" },
                 { href: "/contact", label: "Join Us" },
@@ -193,7 +198,7 @@ export default function Footer() {
                 { href: "/courses", label: "Practical Alchemy" },
                 { href: "/courses", label: "Ritual Magic" },
                 { href: "/courses", label: "Sacred Geometry" },
-                { href: "/courses", label: "Celestial Astrology" },
+                { href: "/astrology", label: "Celestial Astrology" },
               ].map((link, i) => (
                 <li key={i}>
                   <Link
