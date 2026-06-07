@@ -1,0 +1,296 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap");
+
+@theme {
+  --color-obsidian: #05030d;
+  --color-obsidian-mid: #0f0b1a;
+  --color-purple-deep: #1a0d2e;
+  --color-purple-mid: #2d1452;
+  --color-amethyst: #6d28d9;
+  --color-amethyst-bright: #7c3aed;
+  --color-gold: #c9a84c;
+  --color-gold-bright: #f0d060;
+  --color-flame: #e05c1a;
+  --color-ember: #ff8c42;
+  --color-parchment: #f0e6d3;
+  --color-silver: #b8a8cc;
+
+  --font-cinzel: "Cinzel", serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-fell: "IM Fell English", serif;
+
+  --animate-flame-pulse: flame-pulse 3s ease-in-out infinite;
+  --animate-mystic-glow: mystic-glow 4s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 3s linear infinite;
+  --animate-ember-rise: ember-rise 4s ease-out infinite;
+}
+
+@keyframes flame-pulse {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    opacity: 0.9;
+  }
+  25% {
+    transform: scale(1.04) translateY(-4px);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.97) translateY(-2px);
+    opacity: 0.85;
+  }
+  75% {
+    transform: scale(1.02) translateY(-6px);
+    opacity: 0.95;
+  }
+}
+
+@keyframes mystic-glow {
+  0%, 100% {
+    box-shadow: 0 0 40px 10px rgba(109, 40, 217, 0.3), 0 0 80px 20px rgba(224, 92, 26, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 60px 20px rgba(109, 40, 217, 0.5), 0 0 120px 40px rgba(224, 92, 26, 0.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes ember-rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-80px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #05030d;
+  color: #f0e6d3;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.font-cinzel {
+  font-family: "Cinzel", serif;
+}
+
+.font-cormorant {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.font-fell {
+  font-family: "IM Fell English", serif;
+}
+
+.text-parchment {
+  color: #f0e6d3;
+}
+
+.text-gold {
+  color: #c9a84c;
+}
+
+.text-gold-bright {
+  color: #f0d060;
+}
+
+.text-silver {
+  color: #b8a8cc;
+}
+
+.text-flame {
+  color: #e05c1a;
+}
+
+.text-ember {
+  color: #ff8c42;
+}
+
+.bg-obsidian {
+  background-color: #05030d;
+}
+
+.bg-obsidian-mid {
+  background-color: #0f0b1a;
+}
+
+.bg-purple-deep {
+  background-color: #1a0d2e;
+}
+
+.bg-purple-mid {
+  background-color: #2d1452;
+}
+
+.border-gold {
+  border-color: #c9a84c;
+}
+
+.border-gold-bright {
+  border-color: #f0d060;
+}
+
+/* Gold shimmer text effect */
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #c9a84c 0%,
+    #f0d060 25%,
+    #c9a84c 50%,
+    #f0d060 75%,
+    #c9a84c 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Ornamental divider */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c9a84c, transparent);
+}
+
+/* Mystic card hover */
+.mystic-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.mystic-card:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(109, 40, 217, 0.3), 0 4px 15px rgba(201, 168, 76, 0.1);
+}
+
+/* Button styles */
+.btn-gold-filled {
+  background: linear-gradient(135deg, #c9a84c, #f0d060);
+  color: #05030d;
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.btn-gold-filled:hover {
+  background: linear-gradient(135deg, #f0d060, #c9a84c);
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-gold-outline {
+  background: transparent;
+  color: #c9a84c;
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 2rem;
+  border: 1px solid #c9a84c;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.btn-gold-outline:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: #f0d060;
+  color: #f0d060;
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05030d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d1452;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d28d9;
+}
+
+/* Selection */
+::selection {
+  background: rgba(109, 40, 217, 0.4);
+  color: #f0d060;
+}
